@@ -1,0 +1,35 @@
+<div *ngIf="!isAdminLoggedIn && !isStudentLoggedIn">
+    <mat-toolbar color="primary" class="navbar">
+        <span class="navbar-brand">School Managment</span>
+        <span class="spacer"></span>
+        <button mat-button routerLink="/login" routerLinkActive="active">LOGIN</button>
+    </mat-toolbar>
+</div>
+
+<div *ngIf="isAdminLoggedIn">
+    <mat-toolbar color="primary" class="navbar">
+        <span class="navbar-brand">Admin Panel</span>
+        <span class="spacer"></span>
+        <button mat-button routerLink="/admin/dashboard" routerLinkActive="active">DASHBOARD</button>
+        <button mat-button routerLink="/admin/student" routerLinkActive="active">POST STUDENT</button>
+        <button mat-button routerLink="/admin/students" routerLinkActive="active">STUDENTS</button>
+        <button mat-button routerLink="/admin/teacher" routerLinkActive="active">POST TEACHER</button>
+        <button mat-button routerLink="/admin/teachers" routerLinkActive="active">TEACHERS</button>
+        <button mat-button routerLink="/admin/permits" routerLinkActive="active">PERMITS</button>
+        <button mat-button (click)="logout()" routerLinkActive="active">LOGOUT</button>
+    </mat-toolbar>
+</div>
+
+<div *ngIf="isStudentLoggedIn">
+    <mat-toolbar color="primary" class="navbar">
+        <span class="navbar-brand">Student Panel</span>
+        <span class="spacer"></span>
+        <button mat-button routerLink="/student/dashboard" routerLinkActive="active">DASHBOARD</button>
+        <button mat-button routerLink="/student/permit" routerLinkActive="active">PERMIT</button>
+        <button mat-button routerLink="/student/permits" routerLinkActive="active">MY PERMITS</button>
+        <button mat-button (click)="logout()" routerLinkActive="active">LOGOUT</button>
+    </mat-toolbar>
+</div>
+
+
+<router-outlet></router-outlet>

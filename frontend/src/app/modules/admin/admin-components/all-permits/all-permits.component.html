@@ -1,0 +1,19 @@
+<div class="card-container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px">
+    <mat-card class="student-card" *ngFor="let permit of permits">
+        <mat-card-content style="margin-top: 10px;">
+            <p>Subject: <strong>{{permit.subject}}</strong></p>
+            <p>Body: <strong> {{permit.body}}</strong></p>
+            <p>Date: <strong> {{permit.date | date:'dd,MM,y'}}</strong></p>
+            <p>Status: <strong [ngStyle]="{'color': permit.permitStatus === 'APPROVED' ? 'green' : permit.permitStatus === 'DISAPPROVED' ? 'blue' : 'red'}">{{permit.studentPermitStatus}}</strong></p>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">Action</button>
+
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="changePermitStatus(permit.id,'Approved')">APPROVED</button>
+                <button mat-menu-item (click)="changePermitStatus(permit.id,'Disapproved')">DISAPPROVED</button>
+            </mat-menu>
+        </mat-card-actions>       
+    </mat-card>
+</div>

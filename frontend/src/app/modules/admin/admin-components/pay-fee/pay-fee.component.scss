@@ -1,0 +1,52 @@
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.child{
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-title{
+    margin-left: 130px;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.mat-form-field{
+    width: 100%;
+}
+
+button{
+    width: 100%;
+}
+
+@media (max-width:768px){
+    .parent{
+        padding: 0 10px;
+    }
+
+    .child{
+        max-width: 100%;
+    }
+}
+
+.mat-calender{
+    display: none;
+}
+
+input[type="month"]::-webkit-calendar-picker-indicator{
+    display: none;
+}
+
+input[type="month"]::-webkit-inner-spin-button
+input[type="month"]::-webkit-clear-button{
+    display: none;
+}

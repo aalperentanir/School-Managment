@@ -1,0 +1,44 @@
+<div class="bg">
+    <mat-spinner *ngIf="isSpinning" [diameter]="50" class="spinner"></mat-spinner>
+    <div class="parent">
+        <div class="child">
+            <h1 class="form-title">Pay Fee</h1>
+            <form [formGroup]="validateForm" class="login-form">
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Amount</mat-label>
+                    <input matInput type="number" placeholder="Amount" formControlName="amount" />
+                    <mat-error *ngIf="validateForm.get('amount')?.hasError('required')">This Input Is
+                        Required!</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Month</mat-label>
+                    <mat-select formControlName="month" placeholder="Select a Month">
+                        <mat-option *ngFor="let month of MONTH" [value]="month">{{ month }}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="validateForm.get('month')?.hasError('required')">This Input Is
+                        Required!</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Given By</mat-label>
+                    <input matInput type="text" placeholder="Given by" formControlName="givenBy" />
+                    <mat-error *ngIf="validateForm.get('givenBy')?.hasError('required')">This Input Is
+                        Required!</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput placeholder="Description" formControlName="description"></textarea>
+                    <mat-error *ngIf="validateForm.get('description')?.hasError('required')">This Input Is
+                        Required!</mat-error>
+                </mat-form-field>
+
+
+                <button mat-raised-button color="primary" [disabled]="validateForm.invalid"
+                    (click)="payFee()">Pay</button>
+            </form>
+        </div>
+    </div>
+</div>
