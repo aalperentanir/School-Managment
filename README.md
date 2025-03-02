@@ -41,4 +41,6 @@ This project is a School Management System developed using Angular for the front
 ## Contact
 For any inquiries or issues regarding the project, please contact [alialperentanir@gmail.com].
 
+Demo
 
+Check out our YouTube demo here: [Watch on YouTube](https://youtu.be/vzpijLlVrac)
